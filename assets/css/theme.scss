@@ -114,10 +114,11 @@ img, img:hover {
 }
 // menu
 .navbar-brand img {
-    max-height:80px;
-    margin-bottom:40px;
-    margin-top:40px;
+    max-height: 400px;  // 5 times bigger than the original
+    margin-bottom: 200px;  // Adjust margins to balance the layout
+    margin-top: 200px;
 }
+
 .sidebar {
     position: fixed;
     left: 0px;
