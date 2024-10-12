@@ -4,7 +4,7 @@ title: "Memoirs"
 description: "I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: "/The_Odyssey"
+baseurl: /The_Odyssey
 url: "https://HastarTara.github.io"
 google_analytics: 'UA-xxxxxxxx-1'
 disqus: 'demowebsite'
