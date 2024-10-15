@@ -1,4 +1,4 @@
-# Memoirs Jekyll Theme
+# The Oddysey
 
 to do:
   - sort length of second-most post issue
