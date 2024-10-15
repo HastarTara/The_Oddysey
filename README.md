@@ -1,5 +1,7 @@
 # Memoirs Jekyll Theme
 
-[Live Demo](https://wowthemesnet.github.io/jekyll-theme-memoirs/) | [Docs & Download](https://bootstrapstarter.com/jekyll-theme-memoirs/) |  [Buy me a coffee](https://www.wowthemes.net/donate/)
-
-![memoirs](https://bootstrapstarter.com/assets/img/themes/memoirs-jekyll.jpg)
+to do:
+  - get order of new posts working nicely
+  - possibly sort length of second-most post issue
+  - fix GAS script so it skips articles that have been done
+      - adding new 'completed' column to the g sheets?
