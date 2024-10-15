@@ -249,6 +249,7 @@ img, img:hover {
     }
     .card {
         border:0;
+	width: 100%;
         &:hover {           
            .card-title a { 
                 background-size: 100% 100%;
@@ -290,10 +291,7 @@ img, img:hover {
         margin-top: 10px;
     }
     .img-thumb {
-        object-fit:cover;
-        height:240px;
-        width:100%;
-        object-position:top;
+
     }
 }
 .firstpage {
@@ -311,9 +309,7 @@ img, img:hover {
         }
         .img-thumb {
             object-fit:cover;
-            height:400px;
             width:100%;
-            object-position:top;
         }
     }
 
