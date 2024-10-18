@@ -1,125 +1,23 @@
+<!-- MAYBE NEEDS TO BE CHANGED BACK TO INDEX.HTML!
 
+---
+layout: default
+title: Home
+---
 
-<!DOCTYPE html>
+<!-- Posts Index
+================================================== -->
+<div class="blog-grid-container">
+    {% for post in paginator.posts %}
+        {% include postbox.html %}
+    {% endfor %}
+</div>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splash Page</title>
+<!-- Pagination
+================================================== -->
+<div class="bottompagination">
+<span class="navigation" role="navigation">
+    {% include pagination.html %}
+</span>
+</div>
 
-    <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  justify-content: center; /* Centers the content horizontally */
-  align-items: center; /* Centers the content vertically */
-  min-height: 100vh; /* Ensures body takes full height of the viewport */
-  margin: 0; /* Remove default body margin */
-  background: radial-gradient(orange, red); /* Sets the background */
-}
-
-.outer {
-  width: 500px; /* Outer container width */
-  height: 500px; /* Outer container height */
-  display: flex; /* Allows for flex properties */
-  justify-content: center; /* Centers child elements horizontally */
-  align-items: center; /* Centers child elements vertically */
-}
-
-.eye-container {
-  width: 250px; /* Width of the eye shape */
-  height: 250px; /* Height of the eye shape */
-  display: flex; /* Enables flex layout */
-  justify-content: center; /* Centers pupil inside eye */
-  align-items: center; /* Centers pupil inside eye */
-  position: relative; /* Positions child elements relative to this */
-  border-radius: 90% 1%; /* Creates an eye-like shape */
-  transform: rotate(45deg); /* Rotates the eye container */
-  background: #E9E2D6; /* Eye container background */
-  overflow: hidden; /* Hides any overflow */
-}
-
-.pupil {
-  width: 125px; /* Width of the pupil */
-  height: 125px; /* Height of the pupil */
-  background: #DC423D; /* Pupil color */
-  border-radius: 50%; /* Makes the pupil round */
-  position: absolute; /* Positioned relative to the eye container */
-  z-index: 10; /* Ensures pupil is on top */
-}
-
-.keyhole {
-  width: 80px; /* Keyhole width */
-  height: 80px; /* Keyhole height */
-  background: #1A1617; /* Keyhole color */
-  position: absolute; /* Positioned relative to the pupil */
-  top: 20%; /* Position from top */
-  left: 20%; /* Position from left */
-  border-radius: 50%; /* Makes keyhole round */
-}
-
-    </style>
-</head>
-<body>
-    <div class="outer">
-        <div class="eye-container" id="eye">
-            <div class="pupil"></div>
-        </div>
-    </div>
-  
-  <!--THIS IS THE SPLASH PAGE CURRENTLY TAKING THE PLACE OF THE ORIGNAL INDEX POTENTIALLY GET RID OF THIS REF BUTTON?
-  
-  Working link to orig_index.html -->
-  <a href="{{ site.baseurl }}/original_index.html" style="text-decoration: none; color: white;">
-    <button>Go to Main Page1000</button>
-</a>
-
-    <script>
-const eye = document.querySelector('.pupil');
-const eyeContainer = document.querySelector(".eye-container");
-
-const eyeContainerWidth = eyeContainer.clientWidth;
-const eyeContainerHeight = eyeContainer.clientHeight;
-const pupilWidth = eye.clientWidth;
-const pupilHeight = eye.clientHeight;
-
-// Calculate boundaries
-const maxTranslateX = (eyeContainerWidth / 2) - (pupilWidth / 2) + 50;
-const maxTranslateY = (eyeContainerHeight / 2) - (pupilHeight / 2) + 50;
-
-window.addEventListener('mousemove', (evt) => {
-    // Get the bounding rectangle of the eye container
-    const rect = eyeContainer.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2; // Center X of the eye container
-    const centerY = rect.top + rect.height / 2; // Center Y of the eye container
-
-    // Calculate offsets from the center of the eye container
-    const x = evt.clientX - centerX; // X position relative to the center
-    const y = evt.clientY - centerY; // Y position relative to the center
-
-    // Apply the rotation correction (45 degrees)
-    const angle = 135 * (Math.PI / 180); // Convert to radians
-    const rotatedX = x * Math.cos(angle) - y * Math.sin(angle);
-    const rotatedY = x * Math.sin(angle) + y * Math.cos(angle);
-
-    // Invert the rotated positions to reverse the movement
-    let translateX = -rotatedX / 4;
-    let translateY = -rotatedY / 4;
-
-    // Clamp the values to stay within the boundaries
-    translateX = Math.max(-maxTranslateX, Math.min(translateX, maxTranslateX));
-    translateY = Math.max(-maxTranslateY, Math.min(translateY, maxTranslateY));
-
-    eye.style.transform = `translateY(${translateY}px) translateX(${translateX}px)`;
-});
-
-
-    </script>
-</body>
-</html>
-
-<!--THIS IS THE SPLASH PAGE CURRENTLY TAKING THE PLACE OF THE ORIGNAL INDEX
