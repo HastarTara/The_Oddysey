@@ -1,6 +1,8 @@
 # The Oddysey
 
 to do:
+
+  - add color theme toggle (so i can see for production without turning my dark flag off - also to get cool colorful inversions i.e. of splash page. Also swich the src of the logo (white to black, etc)
   
   - sort 2nd and 3rd post image crop formatting (all older ones work fine)
   
