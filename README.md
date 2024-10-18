@@ -2,7 +2,7 @@
 
 to do:
 
-  - currently the splash comes first when served locally, but is skipped and has to be accessed manually via url when live. this is possibly something to do either with liquid syntax of the links, and/or jekylls front matter (there is currently none on splash.html)
+  - currently the splash comes first when served locally, but is skipped and has to be accessed manually via url when live. this is possibly something to do either with liquid syntax of the links, and/or jekylls front matter (there is currently none on splash.html) - also possible to do with different spellings - The Oddysey vs the Odyssey
 
   - add color theme toggle (so i can see for production without turning my dark flag off - also to get cool colorful inversions i.e. of splash page. Also swich the src of the logo (white to black, etc)
 
