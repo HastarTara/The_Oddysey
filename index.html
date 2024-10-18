@@ -3,6 +3,17 @@ layout: default
 title: Home
 ---
 
+<script>
+    // Check if the "fromSplash" parameter is in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const fromSplash = urlParams.get('fromSplash');
+
+    // Redirect to the splash page if not coming from the splash page
+    if (!fromSplash && (window.location.pathname === '/The_Odyssey/' || window.location.pathname === '/The_Odyssey/index.html')) {
+        window.location.href = '/The_Odyssey/splash.html';
+    }
+</script>
+
 <!-- Posts Index
 ================================================== -->
 <div class="blog-grid-container">
@@ -18,4 +29,3 @@ title: Home
     {% include pagination.html %}
 </span>
 </div>
-
