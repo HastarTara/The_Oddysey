@@ -18,5 +18,7 @@ to do:
   
     - add 'click image to read full article' above the image, and make the image the external link
 
+  
+  
   - fix GAS script so it skips articles that have been done
       - adding new 'completed' column to the g sheets?
