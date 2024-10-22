@@ -2,6 +2,8 @@
 
 to do:
 
+  - add the script that generated the pano csv to github. same for the GAS scripts but REMOVE CREDS LIKE GITHUB TOKEN
+
   - I have the CSV of random streetview panos. Implement the GAS that will post it to TheOddysey
 
   - SPLASH
