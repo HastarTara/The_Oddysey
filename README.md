@@ -4,7 +4,7 @@ to do:
 
   - Download Google Clasp for local GAS editing and deployment to GDrive? doesn't add much though... maybe nicer hotkey workflow
   
-  - Write a master script to run all the individual scripts when they've all been run and tested individually - would require a master mode flag to be passed as a parameter to each script that they have a default setting for. (start this on next script? see below todo item)  
+  - Write a master script to run all the individual scripts when they've all been run and tested individually - would require a master mode flag to be passed as a parameter to each script that they have a default setting for. (start this on next script? see second below todo item)  
 
   - Add the script that generated the Streetview Panos CSV to github. same for the GAS scripts but REMOVE CREDS LIKE GITHUB TOKEN - automate this possibly to utilise version control on the scripts, versions available to view in github (obvs - creds). utilise config/.env file? ask chatgpt for the name of this file...
 
