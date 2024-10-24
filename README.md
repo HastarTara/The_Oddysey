@@ -2,7 +2,13 @@
 
 to do:
 
-  - add the script that generated the pano csv to github. same for the GAS scripts but REMOVE CREDS LIKE GITHUB TOKEN
+  - 
+
+  - Download Google Clasp for local GAS editing and deployment to GDrive? doesn't add much though... maybe nicer hotkey workflow
+  
+  - Write a master script to run all the individual scripts when they've all been run and tested individually - would require a master mode flag to be passed as a parameter to each script that they have a default setting for. (start this on next script?)  
+
+  - Add the script that generated the Streetview Panos CSV to github. same for the GAS scripts but REMOVE CREDS LIKE GITHUB TOKEN
 
   - I have the CSV of random streetview panos. Implement the GAS that will post it to TheOddysey
 
@@ -23,4 +29,5 @@ to do:
     - add 'click image to read full article' above the image, and make the image the external link
       
   - fix GAS script so it skips articles that have been done
-      - adding new 'completed' column to the g sheets?
+      
+      - adding new 'completed' column to the g sheets? alternatively - remove the row, add to 'completed' spreadsheet. This would stop the increase of limited GAS row-read operations over time.
