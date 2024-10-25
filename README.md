@@ -4,7 +4,7 @@ to do:
 
   - Download Google Clasp for local GAS editing and deployment to GDrive? doesn't add much though... maybe nicer hotkey workflow
   
-  - Write a master script to run all the individual scripts when they've all been run and tested individually - would require a master mode flag to be passed as a parameter to each script that they have a default setting for. (start this on next script? see second below todo item)  
+  - Write a master script to run all the individual scripts when they've all been run and tested individually - implementing the master mode flag (already done on the streetview pano category)
 
   - Add the GAS scripts to github for review but REMOVE CREDS >=>=> implement .env file.
 
