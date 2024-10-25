@@ -24,7 +24,7 @@ to do:
     parent genus/species)... this could go on the article page, same for each in a category
       
       -  maybe this means editing the script & sheet so it includes tree genera as well         
-        (https://en.wikipedia.org/wiki/List_of_tree_genera) - same deal for 'common fish names', etc. wikipedia has irregular structures...
+        (https://en.wikipedia.org/wiki/List_of_tree_genera) - same deal for 'common fish names', etc. wikipedia has irregular structures... https://en.wikipedia.org/wiki/Category:Chemical_elements eg
   
     - add 'click image to read full article' above the image, and make the image the external link - same for the maps articles.
       
