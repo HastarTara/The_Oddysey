@@ -6,7 +6,7 @@ to do:
   
   - Write a master script to run all the individual scripts when they've all been run and tested individually - implementing the master mode flag (already done on the streetview pano category)
 
-  - remove creds from scripts by using GASscript properties service. Also Add copies of the scripts to github for review but REMOVE CREDS >=>=> implement .env file. (possible have the script make a text copy of itself to post to github along with the article contents?)
+  - remove creds from scripts by using GASscript properties service - streetview pano script needs this to work. Also Add copies of the scripts to github for review but REMOVE CREDS >=>=> implement .env file. (possible have the script make a text copy of itself to post to github along with the article contents?)
 
   - SPLASH
     
