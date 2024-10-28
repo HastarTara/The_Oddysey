@@ -2,6 +2,8 @@
 
 to do:
 
+  - get folders for categories auto generated inside _posts
+
   - Download Google Clasp for local GAS editing and deployment to GDrive? doesn't add much though... maybe nicer hotkey workflow
   
   - Write a master script to run all the individual scripts when they've all been run and tested individually - implementing the master mode flag (already done on the streetview pano category)
