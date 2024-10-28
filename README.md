@@ -6,7 +6,7 @@ to do:
   
   - Write a master script to run all the individual scripts when they've all been run and tested individually - implementing the master mode flag (already done on the streetview pano category)
 
-  - remove creds from scripts by using GASscript properties service - streetview pano script needs this to work. Also Add copies of the scripts to github for review but REMOVE CREDS >=>=> implement .env file. (possible have the script make a text copy of itself to post to github along with the article contents?)
+  -  Add copies of the scripts to github for review - possible have the scripts make text copies of themselves post to github along with the article contents?)
 
   - SPLASH
     
@@ -14,18 +14,20 @@ to do:
 
     - work more on splash page - add lock mechanism? and change button so the the eye is centered again  
 
-  - POSTS
+  - POSTS FORMAT TWEAKING (big focus on links & tidying) - "- add 'click image to read full article' above the image, and make the image the external link - same for the maps articles."
 
-    - Format the maps articles - change size of thumbnail? have image link straight to google maps, skip the embedding on oddysea? this would allow being able to easily see the date of the pano
+    - maps articles:
+      -  change size of thumbnail? have image link straight to google maps, skip the embedding on oddysea? this would allow being able to easily see the date of the pano
+
+    - Comics articles:
+      - fix broken image embeds   
        
     - sort 2nd and 3rd post image crop formatting (all older ones work fine)
-  
-    - add nice category intro/description to the relevant card (i.e. saying if a tree article is short, show where to click on its 
+    - Trees ( + soon other wikipedia categories)
+      - add nice category intro/description to the relevant card (i.e. saying if a tree article is short, show where to click on its 
     parent genus/species)... this could go on the article page, same for each in a category
       
       -  maybe this means editing the script & sheet so it includes tree genera as well         
         (https://en.wikipedia.org/wiki/List_of_tree_genera) - same deal for 'common fish names', etc. wikipedia has irregular structures... https://en.wikipedia.org/wiki/Category:Chemical_elements eg
   
-    - add 'click image to read full article' above the image, and make the image the external link - same for the maps articles.
-      
-  - make sure all gas scripts have the skip if already processed functionality. in future implement the transferal of completed rows to a new sheet (this wont become a problem for a long time if its only attempting to retrieve one article per category per day). They also need to check the AlreadProcessed column for ther relevant entry. this could be extracted to a function? 
+  - low importance: make sure all gas scripts have the skip if already processed functionality. in future implement the transferal of completed rows to a new sheet (this wont become a problem for a long time if its only attempting to retrieve one article per category per day). They also need to check the AlreadProcessed column for ther relevant entry. this could be extracted to a function? 
