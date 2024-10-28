@@ -19,10 +19,10 @@ to do:
   - POSTS FORMAT TWEAKING (big focus on links & tidying) - "- add 'click image to read full article' above the image, and make the image the external link - same for the maps articles."
 
     - maps articles:
-      -  change size of thumbnail? have image link straight to google maps, skip the embedding on oddysea? this would allow being able to easily see the date of the pano
+      -  change size of thumbnail? have image link straight to google maps, skip the embedding on oddysea? this would allow being able to easily see the date of the pano - skip the thumbail pic in the articles
 
     - Comics articles:
-      - fix broken image embeds   
+      - fix broken tvtrope embed (reroute through weserv nl?), add thumb - nice heading/font or pic?   
        
     - sort 2nd and 3rd post image crop formatting (all older ones work fine)
     - Trees ( + soon other wikipedia categories)
