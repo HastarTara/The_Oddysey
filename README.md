@@ -2,7 +2,7 @@
 
 to do:
 
-GIPHY canvas on local - serve local. fix search/load-more only work once. add html canvas resize/drawing/moving features
+  - GIPHY canvas on local - serve local. fix search/load-more only work once. add html canvas resize/drawing/moving features
 
   - get folders for categories auto generated inside _posts
 
