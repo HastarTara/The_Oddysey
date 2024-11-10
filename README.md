@@ -5,12 +5,8 @@ to do:
   - GIPHY canvas - serve local - fix new searches appending rather than replacing previous. add canvas / resize / scale functionality
 
   - get folders for categories auto generated inside _posts
-
-  - learn & use clasp - save your wrist!
   
   - Write a master script to run all the individual scripts when they've all been run and tested individually - implementing the master mode flag (already done on the streetview pano category)
-
-  -  Add copies of the scripts to github for review - possible have the scripts make text copies of themselves post to github along with the article contents?)
 
   - SPLASH
     
