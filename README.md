@@ -6,7 +6,7 @@ to do:
 
   - GIPHY canvas - serve local - fix new searches appending rather than replacing previous. add canvas / resize / scale functionality
 
-  - get folders for categories auto generated inside _posts
+  - get folders for categories auto generated inside _posts (simple as adding dirs in the paths of generated posts...)
   
   - Write a master script to run all the individual scripts when they've all been run and tested individually - implementing the master mode flag (already done on the streetview pano category)
 
