@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     const gasGeolocationURL = 'https://script.google.com/macros/s/AKfycbwO0FhCEY_CYSewKbLD-QjTkSgJmfIJJ25DaRsZPV3aEKiAmVyIaTn5MEflQ6v_Q2La5w/exec?action=geolocation';
     const gasWeatherURL = 'https://script.google.com/macros/s/AKfycbwO0FhCEY_CYSewKbLD-QjTkSgJmfIJJ25DaRsZPV3aEKiAmVyIaTn5MEflQ6v_Q2La5w/exec?action=weather';
 
-
-    
-
     try {
         // Get the user's IP address from a third-party service
         const ipResponse = await fetch('https://api.ipify.org?format=json');
@@ -20,14 +17,10 @@ document.addEventListener("DOMContentLoaded", async function() {
         const weatherResponse = await fetch(`${gasWeatherURL}&latitude=${latitude}&longitude=${longitude}`);
         const weatherData = await weatherResponse.json();
 
-        console.log(weatherData);
-
         const weatherCondition = weatherData.weather[0].main;
-
-
-        // Apply animation based on weather
-        let animationClass = 'fire'; //switch back to empty string after tests!
-        console.log('Selected Animation Class:', animationClass);
+        
+        // Determine the animation class based on the weather condition
+        let animationClass = 'fire'; // Default animation
         switch (weatherCondition.toLowerCase()) {
             case 'rain':
                 animationClass = 'rain-animation';
@@ -41,12 +34,17 @@ document.addEventListener("DOMContentLoaded", async function() {
             case 'sun':
                 animationClass = 'cloudy-animation';
                 break;
-            // Add additional cases as needed
             default:
                 animationClass = 'default-animation';
         }
 
-        document.body.classList.add(animationClass); // Add the animation class to the body
+        console.log('Selected Animation Class:', animationClass);
+        
+        // Add the animation class to the body
+        document.body.classList.add(animationClass);
+
+        // Debugging: log the current class on the body
+        console.log('Current body class:', document.body.classList);
     } catch (error) {
         console.error('Error fetching location or weather data:', error);
     }
