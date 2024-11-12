@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", async function() {
         const weatherResponse = await fetch(`${gasWeatherURL}&latitude=${latitude}&longitude=${longitude}`);
         const weatherData = await weatherResponse.json();
 
+        console.log('Weather data:', weatherData);
+
         const weatherCondition = weatherData.weather[0].main;
-        
+
         // Determine the animation class based on the weather condition
         let animationClass = 'fire'; // Default animation
         switch (weatherCondition.toLowerCase()) {
