@@ -2,6 +2,8 @@
 
 to do:
 
+  - start collecting weather animations and tweaking them so the js/gas weather animation feature correctly injects them as backgrounds on index.html
+
   - GIPHY canvas - serve local - fix new searches appending rather than replacing previous. add canvas / resize / scale functionality
 
   - get folders for categories auto generated inside _posts
