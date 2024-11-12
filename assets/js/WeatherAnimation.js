@@ -17,28 +17,12 @@ document.addEventListener("DOMContentLoaded", async function() {
         const weatherResponse = await fetch(`${gasWeatherURL}&latitude=${latitude}&longitude=${longitude}`);
         const weatherData = await weatherResponse.json();
 
-        console.log('Weather data:', weatherData);
+        console.log('Weather Data:', weatherData);
 
         const weatherCondition = weatherData.weather[0].main;
 
-        // Determine the animation class based on the weather condition
-        let animationClass = 'fire'; // Default animation
-        switch (weatherCondition.toLowerCase()) {
-            case 'rain':
-                animationClass = 'rain-animation';
-                break;
-            case 'clear':
-                animationClass = 'clear-sky-animation';
-                break;
-            case 'clouds':
-                animationClass = 'cloudy-animation';
-                break;
-            case 'sun':
-                animationClass = 'cloudy-animation';
-                break;
-            default:
-                animationClass = 'default-animation';
-        }
+        // Force animation to 'fire' for testing
+        let animationClass = 'fire'; // Always apply the 'fire' animation for testing
 
         console.log('Selected Animation Class:', animationClass);
         
