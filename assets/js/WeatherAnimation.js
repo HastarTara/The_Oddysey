@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         // Apply animation based on weather
         let animationClass = 'fire'; //switch back to empty string after tests!
+        console.log('Selected Animation Class:', animationClass);
         switch (weatherCondition.toLowerCase()) {
             case 'rain':
                 animationClass = 'rain-animation';
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                 animationClass = 'default-animation';
         }
 
-        console.log('Selected Animation Class:', animationClass);
         document.body.classList.add(animationClass); // Add the animation class to the body
     } catch (error) {
         console.error('Error fetching location or weather data:', error);
