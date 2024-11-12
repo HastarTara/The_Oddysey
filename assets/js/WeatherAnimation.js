@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 
         // Apply animation based on weather
-        let animationClass = '';
+        let animationClass = 'fire-animation'; //switch back to empty string after tests!
         switch (weatherCondition.toLowerCase()) {
             case 'rain':
                 animationClass = 'rain-animation';
