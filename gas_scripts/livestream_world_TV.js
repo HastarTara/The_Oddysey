@@ -1,82 +1,108 @@
 function youtube_main(runStandalone = true) {
-    // Set post category for blog post
-    var postCategory = 'live ambient TV'; 
+    var postCategory = 'live ambient TV';
+    var youtubeCategories = ['Nature', 'city']; // space, farm, traffic, animals, underwater ----Add more as needed
 
-    // Define YouTube categories for search
-    var youtubeCategories = ['Nature']; // You can add more categories if needed
+    var properties = PropertiesService.getScriptProperties();
+    var apiKey = properties.getProperty('GOOGLE_API_KEY');
 
-    // Get the API key from script properties
-    var apiKey = getApiKey();
-    if (!apiKey) {
-        Logger.log("API key not found in script properties.");
-        return;
-    }
-
-    // Fetch YouTube videos for the defined categories
+    // Fetch videos
     var videoResults = fetchYouTubeVideos(apiKey, youtubeCategories);
 
-    // Generate Markdown content for the blog post
+    // Generate the Markdown post
     var markdownContent = generateMarkdownContent(videoResults, postCategory);
 
-    // If running standalone, push the generated markdown content to GitHub
     if (runStandalone) {
-        var postTitle = "The World Window - 1 ";
+        var postTitle = "The World Window";
         pushToGithub(markdownContent, postCategory, postTitle);
-        Logger.log(`Successfully pushed to GitHub for category: ${postCategory}`);
+        Logger.log(`Post pushed to GitHub: ${postTitle}`);
     }
-
-    // Return the generated markdown content for debugging or further use
-    return markdownContent;
 }
 
-// Function to fetch the API key from script properties
-function getApiKey() {
-    var properties = PropertiesService.getScriptProperties();
-    return properties.getProperty('GOOGLE_API_KEY');
-}
-
-// Function to fetch YouTube videos for each category
 function fetchYouTubeVideos(apiKey, youtubeCategories) {
     var videoResults = {};
 
     youtubeCategories.forEach(function(category) {
-        var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&type=video&maxResults=30&q=${encodeURIComponent(category + " live")}&key=${apiKey}`;
+        var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&type=video&maxResults=30&q=${encodeURIComponent(category)}&key=${apiKey}`;
         var response = UrlFetchApp.fetch(url);
         var data = JSON.parse(response.getContentText());
-
-        // Store the fetched videos under the category
-        videoResults[category] = data.items ? data.items.map(function(item) {
+        videoResults[category] = data.items.map(function(item) {
             return {
                 id: item.id.videoId,
                 title: item.snippet.title
             };
-        }) : [];
+        });
     });
 
     return videoResults;
 }
 
-// Function to generate Markdown content
 function generateMarkdownContent(videoResults, postCategory) {
     var title = "The World Window - " + new Date().toLocaleDateString('en-GB');
-    var author = "yourname"; // You can replace this with actual author name
+    var author = "yourname";
 
-    var markdownContent = `
-    ---
-    layout: post
-    title: "${title}"
-    author: ${author}
-    categories: [${postCategory}]
-    tags: [youtube]
-    description: "Watch live streams in different categories like Nature."
-    ---
+    // Embed video data as JSON for frontend usage
+    var videoData = JSON.stringify(videoResults);
 
-    <div style="text-align: center;">
-        <button onclick="loadNextVideo('${Object.keys(videoResults)[0]}')">Next</button>
+    return `
+---
+layout: post
+title: "${title}"
+author: ${author}
+categories: [${postCategory}]
+tags: [youtube, videos]
+description: "Explore live ambient streams in categories like Nature, City, and Space."
+---
+
+<div id="videoContainer" style="text-align: center; margin-bottom: 20px;">
+    <div id="categoryButtons" style="margin-bottom: 10px;">
+        <!-- Buttons for video categories -->
     </div>
     <iframe id="videoFrame" width="100%" height="600" style="border: 1px solid #ccc;" allowfullscreen></iframe>
     <div id="videoTitle" style="text-align: center; font-size: 1.5em; margin-top: 10px;"></div>
-    `;
+    <button onclick="loadNextVideo()" style="margin-top: 15px;">Next Video</button>
+</div>
 
-    return markdownContent;
+<script>
+    // JSON data for videos by category
+    const videoResults = ${videoData};
+    const categories = Object.keys(videoResults);
+
+    // State management
+    let currentCategory = categories[0]; // Default category
+    let currentIndex = Math.floor(Math.random() * videoResults[currentCategory].length); // Start at random index
+
+    // Create category buttons dynamically
+    const categoryButtonsContainer = document.getElementById('categoryButtons');
+    categories.forEach(category => {
+        const button = document.createElement('button');
+        button.textContent = category;
+        button.style.margin = '0 5px';
+        button.onclick = () => switchCategory(category);
+        categoryButtonsContainer.appendChild(button);
+    });
+
+    // Load the current video into the iframe
+    function loadVideo() {
+        const video = videoResults[currentCategory][currentIndex];
+        document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/' + video.id + '?autoplay=1';
+        document.getElementById('videoTitle').textContent = video.title;
+    }
+
+    // Load the next video in the current category
+    function loadNextVideo() {
+        currentIndex = (currentIndex + 1) % videoResults[currentCategory].length;
+        loadVideo();
+    }
+
+    // Switch the active category and load its first video
+    function switchCategory(category) {
+        currentCategory = category;
+        currentIndex = Math.floor(Math.random() * videoResults[currentCategory].length); // Start with a random video
+        loadVideo();
+    }
+
+    // Initial video load
+    loadVideo();
+</script>
+    `;
 }
