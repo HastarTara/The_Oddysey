@@ -2,7 +2,7 @@ function google_maps_main(runStandalone = true) {
     var sheetId = '1dleDioK5_HpwFD2043lWB8qKS11NaNsWCdbKFuOY7bw'; // Replace with your Google Sheet ID
     var category = 'random_locations'; // Define the category
     var properties = PropertiesService.getScriptProperties();
-    var apiKey = properties.getProperty('MAPS_API_KEY');
+    var apiKey = properties.getProperty('GOOGLE_API_KEY');
 
     var markdownArticle = generateMarkdownPost(sheetId, category, apiKey, runStandalone);
     if (markdownArticle) {
