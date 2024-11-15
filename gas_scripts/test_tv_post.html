@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Live Viewer</title>
+</head>
+<body>
+    <div id="buttons" style="margin-bottom: 20px; text-align: center;"></div>
+    <iframe id="videoFrame" width="100%" height="600" style="border: 1px solid #ccc;" allowfullscreen></iframe>
+
+    <script>
+        const apiKey = "AIzaSyCyMtwXYk9B13Tiqh4ikTwxEaMDv3H-ARw"; // Replace with your YouTube API key
+        const categories = ["Nature", "City", "Space"];
+        const videos = {}; // To store fetched video results for each category
+        const videoIndex = {}; // To keep track of the current video index for each category
+
+        async function fetchYouTubeVideos(searchQuery) {
+            const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&type=video&maxResults=5&q=${encodeURIComponent(searchQuery)}&key=${apiKey}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            return data.items || [];
+        }
+
+        async function initialize() {
+            for (const category of categories) {
+                const results = await fetchYouTubeVideos(category + " live");
+                videos[category] = results; // Store results for the category
+                videoIndex[category] = 0; // Initialize index for the category
+            }
+            setupButtons();
+            loadVideo(categories[0]); // Load the first video for the first category by default
+        }
+
+        function setupButtons() {
+            const buttonsDiv = document.getElementById("buttons");
+            categories.forEach(category => {
+                const button = document.createElement("button");
+                button.textContent = category;
+                button.onclick = () => loadVideo(category);
+                buttonsDiv.appendChild(button);
+
+                const nextButton = document.createElement("button");
+                nextButton.textContent = `Next ${category}`;
+                nextButton.onclick = () => loadNextVideo(category);
+                buttonsDiv.appendChild(nextButton);
+            });
+        }
+
+        function loadVideo(category) {
+            const currentVideo = videos[category][videoIndex[category]];
+            if (currentVideo) {
+                document.getElementById("videoFrame").src = `https://www.youtube.com/embed/${currentVideo.id.videoId}?autoplay=1`;
+            } else {
+                alert("No videos available for this category.");
+            }
+        }
+
+        function loadNextVideo(category) {
+            videoIndex[category] = (videoIndex[category] + 1) % videos[category].length; // Cycle through videos
+            loadVideo(category);
+        }
+
+        // Initialize the app
+        initialize();
+    </script>
+</body>
+</html>
