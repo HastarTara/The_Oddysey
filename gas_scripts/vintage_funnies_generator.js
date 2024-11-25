@@ -19,6 +19,8 @@ const markdownContent = createComicsMarkdown(comicsData);
 function createComicsMarkdown(comicsData) {
   let markdown = "---\nlayout: post\ntitle: \"Comics Roundup\"\nauthor: \"Hastar\"\ncategories: [comics]\ntags: [weekly]\n---\n\n";
 
+  markdown += `image: /assets/images/vintage_funnies_banner_1.png\n---\n\n`;
+
   markdown += "Click on any of the images below to view their source.\n\n";
 
   comicsData.forEach(comic => {
