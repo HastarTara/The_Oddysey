@@ -5,7 +5,7 @@
   - fix formatting, buttons, categories, plaintext, jekyll theming   
   
 - GEOCONTEXT ANIMATIONS
-  - start collecting weather animations and tweaking them so the js/gas weather animation feature correctly injects them as backgrounds on index.html
+  - start collecting weather animations and tweaking them so the js/gas weather animation feature correctly injects them as backgrounds on index.html (the fire animation is only tested and it applies but it braks other functionality like scrolling etc)
 
 - SPLASH  
   - add color theme toggle (so i can see for production without turning my dark flag off - also to get cool colorful inversions i.e. of splash page. Also swich the src of the logo (white to black, etc)
