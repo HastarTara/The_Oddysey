@@ -17,12 +17,21 @@ const markdownContent = createComicsMarkdown(comicsData);
 
 // Function to generate Markdown content
 function createComicsMarkdown(comicsData) {
-  let markdown = "---\nlayout: post\ntitle: \"Comics Roundup\"\nauthor: yourname\ncategories: [comics]\ntags: [weekly]\n---\n\n";
+  let markdown = "---\nlayout: post\ntitle: \"Comics Roundup\"\nauthor: \"Hastar\"\ncategories: [comics]\ntags: [weekly]\n---\n\n";
+
+  markdown += "Click on any of the images below to view their source.\n\n";
 
   comicsData.forEach(comic => {
     if (comic) {
       const { title, comicUrl, imgUrl } = comic;
-      markdown += `![${title}](${imgUrl})\n[Read more here](${comicUrl})\n\n`;
+
+      if (imgUrl) {
+        // Include image if it exists
+        markdown += `[![](${imgUrl})](${comicUrl})\n\n`;
+      } else {
+        // Fallback for text-only content
+        markdown += `<span style="font-size: 20px;">[${title}](${comicUrl}) - Click to read</span>\n\n`;
+      }
     }
   });
 
@@ -91,13 +100,6 @@ function oots() {
     return null; // Return null if no image found
   }
 }
-
-
-
-
-
-
-
 
 
 
