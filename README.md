@@ -19,7 +19,7 @@
         (https://en.wikipedia.org/wiki/List_of_tree_genera) - same deal for 'common fish names', etc. wikipedia has irregular structures... https://en.wikipedia.org/wiki/Category:Chemical_elements eg
 
 - ROAD PANORAMAS
-  -  change size of thumbnail? have image link straight to google maps, skip the embedding on oddysea? this would allow being able to easily see the date of the pano - skip the thumbail pic in the articles
+  -  get emojis/accent chars working (will involving fiddling with the jekyll settings). Shrink the window slightly to allign with other jekyll page elements
 
 - COMICS
   - larger font / obvious link for TV trope
