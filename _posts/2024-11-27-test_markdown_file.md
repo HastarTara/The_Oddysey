@@ -5,9 +5,10 @@ author: yourname
 categories: [sausage]
 tags: [spam]
 description: "A brief overview of Metrosideros robusta, which has 1276 words."
+image: /assets/images/vintage_funnies_banner_1.png
 ---
 
-
+🗽🗽🗽🗽🗽🗽🗽🗽🗽🗽🗽🗽🗽🗽
 
 # 🌟 Welcome to My Áwesome File 🎉
 
