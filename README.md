@@ -5,7 +5,7 @@
   - fix formatting, buttons, categories, plaintext, jekyll theming   
   
 - GEOCONTEXT ANIMATIONS
-  - start collecting weather animations and tweaking them so the js/gas weather animation feature correctly injects them as backgrounds on index.html (the fire animation is only tested and it applies but it braks other functionality like scrolling etc)
+  - found perfect animations in a codepen but theyre all linked and confusing so detangle, inject them independantly into th index bg.
 
 - SPLASH  
   - add color theme toggle (so i can see for production without turning my dark flag off - also to get cool colorful inversions i.e. of splash page. Also swich the src of the logo (white to black, etc)
@@ -19,7 +19,7 @@
         (https://en.wikipedia.org/wiki/List_of_tree_genera) - same deal for 'common fish names', etc. wikipedia has irregular structures... https://en.wikipedia.org/wiki/Category:Chemical_elements eg
 
 - ROAD PANORAMAS
-  -  get emojis/accent chars working (will involving fiddling with the jekyll settings). Shrink the window slightly to allign with other jekyll page elements
+  -  get emojis/accent chars working (will involving fiddling with the jekyll settings). Shrink the window slightly to allign with other jekyll page elements - soemthing to do with the encodings utf-8, etc in GAS and githb api calls.. any place where theres sending and en/decoding....
 
 - COMICS
   - larger font / obvious link for TV trope
