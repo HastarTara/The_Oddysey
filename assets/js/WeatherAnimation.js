@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const weatherCondition = weatherData.weather[0].main;
 
         // Force animation to 'fire' for testing
-        let animationClass = ''; // Always apply the 'fire' animation for testing
+        let animationClass = 'fire'; // Always apply the 'fire' animation for testing
         // this is where you add switch statements -- but currently the fire animations stops scrolling and clicking so that needs fixing...
 
         console.log('Selected Animation Class:', animationClass);
