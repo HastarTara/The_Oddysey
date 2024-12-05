@@ -1,7 +1,7 @@
 
 function youtubeMain(runStandalone = true) {
     var postCategory = 'live ambient TV';
-    var youtubeCategories = ['Nature', 'City']; // Add more categories as needed.
+    var youtubeCategories = ['nature', 'city', 'space', 'farm', 'animals', 'underwater', 'bus', 'train', 'life', 'survival', 'traffic', 'resort']; // Add more categories as needed.
 
     var properties = PropertiesService.getScriptProperties();
     var apiKey = properties.getProperty('GOOGLE_API_KEY');
@@ -23,7 +23,7 @@ function fetchYouTubeVideos(apiKey, youtubeCategories) {
     var videoResults = {};
 
     youtubeCategories.forEach(function(category) {
-        var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&type=video&maxResults=30&q=${encodeURIComponent(category)}&key=${apiKey}`;
+        var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&type=video&maxResults=30&q=${encodeURIComponent(category + ' live')}&key=${apiKey}`;
         var response = UrlFetchApp.fetch(url);
         var data = JSON.parse(response.getContentText());
         videoResults[category] = data.items.map(function(item) {
