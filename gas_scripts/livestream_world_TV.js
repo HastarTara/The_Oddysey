@@ -35,17 +35,16 @@ function fetchYouTubeVideos(apiKey, youtubeCategories) {
 
     return videoResults;
 }
-
 function generateMarkdownContent(videoResults, postCategory) {
     var title = "The World Window - " + new Date().toLocaleDateString('en-GB');
     var author = "yourname";
 
-    // Embed video data as JSON for frontend usage
+    // Embed video data as JSON
     var videoData = JSON.stringify(videoResults);
 
     return `
 ---
-layout: post
+layout: video_post
 title: "${title}"
 author: ${author}
 categories: [${postCategory}]
@@ -53,56 +52,87 @@ tags: [youtube, videos]
 description: "Explore live ambient streams in categories like Nature, City, and Space."
 ---
 
-<div id="videoContainer" style="text-align: center; margin-bottom: 20px;">
-    <div id="categoryButtons" style="margin-bottom: 10px;">
-        <!-- Buttons for video categories -->
-    </div>
-    <iframe id="videoFrame" width="100%" height="600" style="border: 1px solid #ccc;" allowfullscreen></iframe>
-    <div id="videoTitle" style="text-align: center; font-size: 1.5em; margin-top: 10px;"></div>
-    <button onclick="loadNextVideo()" style="margin-top: 15px;">Next Video</button>
+<div id="videoContainer" class="video-viewer">
+    <div id="categoryButtons" class="category-buttons"></div>
+    <iframe id="videoFrame" width="100%" height="600" allowfullscreen></iframe>
+    <div id="videoTitle" class="video-title"></div>
+    <button id="nextVideoButton" class="btn-next-video">Next Video</button>
 </div>
 
-<script>
-    // JSON data for videos by category
-    const videoResults = ${videoData};
-    const categories = Object.keys(videoResults);
-
-    // State management
-    let currentCategory = categories[0]; // Default category
-    let currentIndex = Math.floor(Math.random() * videoResults[currentCategory].length); // Start at random index
-
-    // Create category buttons dynamically
-    const categoryButtonsContainer = document.getElementById('categoryButtons');
-    categories.forEach(category => {
-        const button = document.createElement('button');
-        button.textContent = category;
-        button.style.margin = '0 5px';
-        button.onclick = () => switchCategory(category);
-        categoryButtonsContainer.appendChild(button);
-    });
-
-    // Load the current video into the iframe
-    function loadVideo() {
-        const video = videoResults[currentCategory][currentIndex];
-        document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/' + video.id + '?autoplay=1';
-        document.getElementById('videoTitle').textContent = video.title;
-    }
-
-    // Load the next video in the current category
-    function loadNextVideo() {
-        currentIndex = (currentIndex + 1) % videoResults[currentCategory].length;
-        loadVideo();
-    }
-
-    // Switch the active category and load its first video
-    function switchCategory(category) {
-        currentCategory = category;
-        currentIndex = Math.floor(Math.random() * videoResults[currentCategory].length); // Start with a random video
-        loadVideo();
-    }
-
-    // Initial video load
-    loadVideo();
-</script>
+<script id="videoContent" type="application/json">${videoData}</script>
+<script src="/assets/js/ambientTV_VideoLoader.js"></script>
     `;
 }
+
+
+// -----------------------------------------------------------z----------- SWITCH THIS BACK IN IF NEED----------------------------------------------------------
+// function generateMarkdownContent(videoResults, postCategory) {
+//     var title = "The World Window - " + new Date().toLocaleDateString('en-GB');
+//     var author = "yourname";
+
+//     // Embed video data as JSON for frontend usage
+//     var videoData = JSON.stringify(videoResults);
+
+//     return `
+// ---
+// layout: post
+// title: "${title}"
+// author: ${author}
+// categories: [${postCategory}]
+// tags: [youtube, videos]
+// description: "Explore live ambient streams in categories like Nature, City, and Space."
+// ---
+
+// <div id="videoContainer" style="text-align: center; margin-bottom: 20px;">
+//     <div id="categoryButtons" style="margin-bottom: 10px;">
+//         <!-- Buttons for video categories -->
+//     </div>
+//     <iframe id="videoFrame" width="100%" height="600" style="border: 1px solid #ccc;" allowfullscreen></iframe>
+//     <div id="videoTitle" style="text-align: center; font-size: 1.5em; margin-top: 10px;"></div>
+//     <button onclick="loadNextVideo()" style="margin-top: 15px;">Next Video</button>
+// </div>
+
+// <script>
+//     // JSON data for videos by category
+//     const videoResults = ${videoData};
+//     const categories = Object.keys(videoResults);
+
+//     // State management
+//     let currentCategory = categories[0]; // Default category
+//     let currentIndex = Math.floor(Math.random() * videoResults[currentCategory].length); // Start at random index
+
+//     // Create category buttons dynamically
+//     const categoryButtonsContainer = document.getElementById('categoryButtons');
+//     categories.forEach(category => {
+//         const button = document.createElement('button');
+//         button.textContent = category;
+//         button.style.margin = '0 5px';
+//         button.onclick = () => switchCategory(category);
+//         categoryButtonsContainer.appendChild(button);
+//     });
+
+//     // Load the current video into the iframe
+//     function loadVideo() {
+//         const video = videoResults[currentCategory][currentIndex];
+//         document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/' + video.id + '?autoplay=1';
+//         document.getElementById('videoTitle').textContent = video.title;
+//     }
+
+//     // Load the next video in the current category
+//     function loadNextVideo() {
+//         currentIndex = (currentIndex + 1) % videoResults[currentCategory].length;
+//         loadVideo();
+//     }
+
+//     // Switch the active category and load its first video
+//     function switchCategory(category) {
+//         currentCategory = category;
+//         currentIndex = Math.floor(Math.random() * videoResults[currentCategory].length); // Start with a random video
+//         loadVideo();
+//     }
+
+//     // Initial video load
+//     loadVideo();
+// </script>
+//     `;
+// }
