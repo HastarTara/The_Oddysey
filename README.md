@@ -2,7 +2,7 @@
 ## to do:
 
 - AMBIENT TV
-  - fix formatting, buttons, categories, plaintext, jekyll theming   
+  - final zhuzh - lush ui buttons etc, fit window to width of screen dynamic
   
 - GEOCONTEXT ANIMATIONS
   - found perfect animations in a codepen but theyre all linked and confusing so detangle, inject them independantly into th index bg.
