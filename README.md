@@ -24,6 +24,7 @@
 - COMICS
   - larger font / obvious link for TV trope
   - sort thumbnail switch light/dark theme dependant
+  - better front matter/banner pic? waht file type? ive done png, why not svg? research what is standard
 
 - INDEX LAYOUT
   - sort 2nd and 3rd post image crop formatting (all older ones work fine)
