@@ -41,16 +41,19 @@ post_class: post-template
 <!-- Content -->
 {% include article.html %}
 
-<!-- {% if page.categories contains 'live ambient TV' %}
-  <div style="text-align: center;">
-      <button onclick="loadNextVideo('Nature')">Next</button>
+{% if page.categories contains 'live ambient TV' %}
+  <div id="videoContainer" style="text-align: center; margin-bottom: 20px;">
+      <div id="categoryButtons" style="margin-bottom: 10px;">
+          <!-- Buttons for video categories -->
+      </div>
+      <iframe id="videoFrame" width="100%" height="600" style="border: 1px solid #ccc;" allowfullscreen></iframe>
+      <div id="videoTitle" style="text-align: center; font-size: 1.5em; margin-top: 10px;"></div>
+      <button id="nextVideoButton" style="margin-top: 15px;">Next Video</button>
   </div>
-  <iframe id="videoFrame" width="100%" height="600" style="border: 1px solid #ccc;" allowfullscreen></iframe>
-  <div id="videoTitle" style="text-align: center; font-size: 1.5em; margin-top: 10px;"></div>
 
-  Include JS for Video Functionality
-  <script src="{{ '/assets/js/AmbientTV_VideoLoader.js' }}"></script> -->
-<!-- {% endif %} --> 
+  <!-- Include JS for Video Functionality -->
+  <script src="{{ '/assets/js/AmbientTV_VideoLoader.js' | relative_url }}"></script>
+{% endif %}
 
 
 <!-- Rating -->
