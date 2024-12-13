@@ -133,9 +133,9 @@ function setRandomLightningDuration() {
   
   
   // Cloud Effect with particles.js
-  const cloud = document.getElementById('cloud');
+  const cloudy = document.getElementById('cloudy');
   
-  particlesJS("cloud", {
+  particlesJS("cloudy", {
     particles: {
       number: { value: 5, density: { enable: true, value_area: 100 } },
       color: { value: "#ffffff" },

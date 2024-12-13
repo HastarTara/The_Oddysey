@@ -119,7 +119,7 @@ body {
   }
   
   /* Cloud animation */
-  #cloud {
+  #cloudy {
     position: absolute;
     z-index: 0;
     width: 100%;
