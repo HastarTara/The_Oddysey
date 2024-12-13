@@ -52,21 +52,21 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 //=====================================================================================//
 
-// Lightning Duration
 function setRandomLightningDuration() {
-    const lightning = document.getElementById("thunderstorm");
+  const lightning = document.getElementById("lightning");
+  if (lightning) {
     const minDuration = 1; // minimum duration in seconds
     const maxDuration = 4; // maximum duration in seconds
     const randomDuration = Math.random() * (maxDuration - minDuration) + minDuration;
     lightning.style.setProperty("--lightning-duration", `${randomDuration}s`);
   }
-  
-  // Set an initial random duration
-  setRandomLightningDuration();
-  
-  // Change the duration periodically
-  setInterval(setRandomLightningDuration, 5000); // Change every 5 seconds
-  
+}
+
+// Set an initial random duration
+setRandomLightningDuration();
+
+// Change the duration periodically
+setInterval(setRandomLightningDuration, 5000); // Change every 5 seconds
   
   // Snow Effect with particles.js
   const snow = document.getElementById('snow');
