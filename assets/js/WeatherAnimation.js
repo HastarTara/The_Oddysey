@@ -28,19 +28,19 @@ document.addEventListener("DOMContentLoaded", async function() {
 
       const weatherCondition = weatherData.weather[0].main;
 
-      let animationClass = 'fire'; // Default animation
+      let animationClass = 'rainy'; // Default animation
       switch (weatherCondition) {
         case 'Rain':
           animationClass = 'rainy';
           break;
         case 'Clouds':
-          animationClass = 'cloudy';
+          animationClass = 'rainy';
           break;
         case 'Thunderstorm':
-          animationClass = 'thunderstorm';
+          animationClass = 'rainy';
           break;
         case 'Clear':
-          animationClass = 'fire';
+          animationClass = 'rainy';
           break;
       }
 
