@@ -5,7 +5,7 @@
   - final zhuzh - lush ui buttons etc, fit window to width of screen dynamic
   
 - GEOCONTEXT ANIMATIONS
-  - found perfect animations in a codepen but theyre all linked and confusing so detangle, inject them independantly into th index bg.
+  - animations visible on index: next, separate them (the toggle functionality - might need reviewing their source), add day/night functionality.
 
 - SPLASH  
   - add color theme toggle (so i can see for production without turning my dark flag off - also to get cool colorful inversions i.e. of splash page. Also swich the src of the logo (white to black, etc)
