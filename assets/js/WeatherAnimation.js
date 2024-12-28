@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       });
 
       // Show the relevant animation based on weather code
-      if (weatherCode >= 200 && weatherCode < 300) {
+      
+      if (weatherCode == 701) {
           document.getElementById("thunderstorm").classList.add("visible");
       } else if (weatherCode >= 300 && weatherCode < 600) {
           document.getElementById("rain").classList.add("visible");
