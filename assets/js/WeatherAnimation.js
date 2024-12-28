@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       // Hide all animations first
       const weatherEffects = document.getElementById("weather-effects");
-      Array.from(weatherEffects.children).forEach(child => {
-          child.classList.remove("visible");
-      });
+      // Array.from(weatherEffects.children).forEach(child => {
+      //     child.classList.remove("visible");
+      // });
 
       // Show the relevant animation based on weather code
       
-      if (weatherCode == 701) {
+      if (weatherCode >= 200 && weatherCode < 300) {
           document.getElementById("thunderstorm").classList.add("visible");
       } else if (weatherCode >= 300 && weatherCode < 600) {
           document.getElementById("rain").classList.add("visible");
