@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       // Fetch weather data
       const weatherResponse = await fetch(`${gasWeatherURL}&latitude=${latitude}&longitude=${longitude}`);
       const weatherData = await weatherResponse.json();
+
+      // Debug: Log the entire weather data object
+      console.log('Weather Data:', weatherData);
+
       const weatherCode = weatherData.weather[0].id;
 
       // Hide all animations first
