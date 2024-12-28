@@ -63,10 +63,7 @@ body {
     z-index: -1;     /* Make sure it stays behind other content */
   }
 
-  #weather-effects > div,
-  #weather-effects > canvas {
-      display: none; /* Hide all animations by default */
-  }
+
   
   /* Thunderstorm and lightning animation */
   #thunderstorm {
