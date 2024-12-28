@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           document.getElementById("rain").classList.add("visible");
       } else if (weatherCode >= 600 && weatherCode < 700) {
           document.getElementById("snow").classList.add("visible");
-      } else if (weatherCode > 800 && weatherCode < 900) {
+      } else if (weatherCode > 700 && weatherCode < 900) {
           document.getElementById("cloudy").classList.add("visible");
       }
   } catch (error) {
