@@ -1,59 +1,50 @@
-
-document.addEventListener("DOMContentLoaded", async function() {
+document.addEventListener("DOMContentLoaded", async function () {
   const gasGeolocationURL = 'https://script.google.com/macros/s/AKfycbwO0FhCEY_CYSewKbLD-QjTkSgJmfIJJ25DaRsZPV3aEKiAmVyIaTn5MEflQ6v_Q2La5w/exec?action=geolocation';
   const gasWeatherURL = 'https://script.google.com/macros/s/AKfycbwO0FhCEY_CYSewKbLD-QjTkSgJmfIJJ25DaRsZPV3aEKiAmVyIaTn5MEflQ6v_Q2La5w/exec?action=weather';
 
   try {
-      // Get the user's IP address from a third-party service
+      // Get the user's IP address
       const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      const ipAddress = ipData.ip;
+      const { ip } = await ipResponse.json();
 
-      // Fetch geolocation data from GAS
-      const locationResponse = await fetch(`${gasGeolocationURL}&ip=${ipAddress}`);
-      const locationData = await locationResponse.json();
-      const { latitude, longitude } = locationData;
+      // Fetch geolocation data
+      const locationResponse = await fetch(`${gasGeolocationURL}&ip=${ip}`);
+      const { latitude, longitude } = await locationResponse.json();
 
-      // Fetch weather data from GAS
+      // Fetch weather data
       const weatherResponse = await fetch(`${gasWeatherURL}&latitude=${latitude}&longitude=${longitude}`);
       const weatherData = await weatherResponse.json();
 
-      // Debugging: log the weather data
       console.log('Weather Data:', weatherData);
 
+      // Ensure weather data is valid
       if (!weatherData || !weatherData.weather || weatherData.weather.length === 0) {
           console.error("Weather data is not available.");
           return;
       }
 
-      const weatherCondition = weatherData.weather[0].main;
+      // Extract weather code and map to animation class
+      const weatherCode = weatherData.weather[0].id;
+      let animationClass = null;
 
-      let animationClass = 'fire'; // Default animation
-      switch (weatherCondition) {
-        case 'Rain':
-          animationClass = 'rainy';
-          break;
-        case 'Clouds':
-          animationClass = 'cloudy';
-          break;
-        case 'Thunderstorm':
-          animationClass = 'thunderstorm';
-          break;
-        case 'Clear':
-          animationClass = 'fire';
-          break;
+      if (weatherCode >= 200 && weatherCode < 300) {
+          animationClass = "thunderstorm";
+      } else if (weatherCode >= 300 && weatherCode < 600) {
+          animationClass = "rain";
+      } else if (weatherCode >= 600 && weatherCode < 700) {
+          animationClass = "snow";
+      } else if (weatherCode > 800 && weatherCode < 900) {
+          animationClass = "clouds";
       }
 
-      // Add the selected animation class to the body
-      document.body.classList.add(animationClass);
-      // Debugging: log the current class on the body
-      console.log('Current body class:', document.body.classList);
-
+      if (animationClass) {
+          document.body.classList.add(animationClass);
+          console.log('Added animation class to body:', animationClass);
+      }
   } catch (error) {
       console.error('Error fetching location or weather data:', error);
   }
 });
-
 
 //=====================================================================================//
 
