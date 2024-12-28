@@ -55,25 +55,25 @@ body {
 /*====================================================================================================*/
 /* Weather effects container */
 #weather-effects {
-    position: fixed;   /* Fixed to the background */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;  /* Prevent interaction with page content */
-    z-index: -1;     /* Ensure it's behind the content */
+  position: fixed;   /* Fixed to the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;  /* Prevent interaction with page content */
+  z-index: -1;     /* Ensure it's behind the content */
 }
 
 /* Hide all weather effects by default */
-/* #weather-effects > div,
+#weather-effects > div,
 #weather-effects > canvas {
-    display: none;
-} */
+  display: none;
+}
 
 /* Show the element with the 'visible' class */
-/* #weather-effects > .visible {
-    display: block;  /* Only the one with the 'visible' class will show */
-/* } */
+#weather-effects > .visible {
+  display: block;
+}
 
   /* Thunderstorm and lightning animation */
   #thunderstorm {

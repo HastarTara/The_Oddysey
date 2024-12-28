@@ -17,28 +17,28 @@ document.addEventListener("DOMContentLoaded", async function () {
       
       const weatherCode = weatherData.weather[0].id;
 
-      // Hide all animations first
+      // Hide all animations first by removing the "visible" class
       const weatherEffects = document.getElementById("weather-effects");
-      // Array.from(weatherEffects.children).forEach(child => {
-      //     child.classList.remove("visible");
-      // });
+      Array.from(weatherEffects.children).forEach(child => {
+          child.classList.remove("visible");
+      });
 
       // Show the relevant animation based on weather code
-      
       if (weatherCode >= 200 && weatherCode < 300) {
           document.getElementById("thunderstorm").classList.add("visible");
       } else if (weatherCode >= 300 && weatherCode < 600) {
           document.getElementById("rain").classList.add("visible");
       } else if (weatherCode >= 600 && weatherCode < 700) {
           document.getElementById("snow").classList.add("visible");
-      } else if (weatherCode > 700 && weatherCode < 900) {
+      } else if (weatherCode >= 700 && weatherCode <= 900) {
           document.getElementById("cloudy").classList.add("visible");
       }
   } catch (error) {
+      // Catch any errors in the try block
       console.error('Error fetching weather data:', error);
-  }
+      // Optionally show a fallback or error message
+  } 
 });
-
 
 //=====================================================================================//
 
