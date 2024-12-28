@@ -4,8 +4,8 @@
 - AMBIENT TV
   - final zhuzh - lush ui buttons etc, fit window to width of screen dynamic
   
-- GEOCONTEXT ANIMATIONS
-  - animations visible on index: next, separate them (the toggle functionality - might need reviewing their source), add day/night functionality.
+- WEATHER ANIMATIONS
+  - tweak their look by studying the codepen (cloud opacity 50%), work on day / night colors background.. possible link to light/dark mode?
 
 - SPLASH  
   - add color theme toggle (so i can see for production without turning my dark flag off - also to get cool colorful inversions i.e. of splash page. Also swich the src of the logo (white to black, etc)
@@ -31,6 +31,7 @@
   - Trees ( + soon other wikipedia categories)
       
 - MISC
+  - nice thumbnails for post types?
   - make sure all gas scripts have the skip if already processed functionality. in future implement the transferal of completed rows to a new sheet (this wont become a problem for a long time if its only attempting to retrieve one article per category per day). They also need to check the AlreadProcessed column for ther relevant entry. this could be extracted to a function? 
   - GIPHY canvas - serve local - fix new searches appending rather than replacing previous. add canvas / resize / scale functionality
   - get folders for categories auto generated inside _posts (simple as adding dirs in the paths of generated posts...)
