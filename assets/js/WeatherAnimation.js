@@ -30,14 +30,13 @@ document.addEventListener("DOMContentLoaded", async function () {
           document.getElementById("rain").classList.add("visible");
       } else if (weatherCode >= 600 && weatherCode < 700) {
           document.getElementById("snow").classList.add("visible");
-      } else if (weatherCode >= 700 && weatherCode <= 900) {
+      } else if (weatherCode >= 700 && weatherCode < 800) {  // Adjusted range for mist and fog
           document.getElementById("cloudy").classList.add("visible");
       }
   } catch (error) {
       // Catch any errors in the try block
       console.error('Error fetching weather data:', error);
-      // Optionally show a fallback or error message
-  } 
+  }
 });
 
 //=====================================================================================//
