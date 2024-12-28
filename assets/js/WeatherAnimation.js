@@ -3,48 +3,38 @@ document.addEventListener("DOMContentLoaded", async function () {
   const gasWeatherURL = 'https://script.google.com/macros/s/AKfycbwO0FhCEY_CYSewKbLD-QjTkSgJmfIJJ25DaRsZPV3aEKiAmVyIaTn5MEflQ6v_Q2La5w/exec?action=weather';
 
   try {
-      // Get the user's IP address
+      // Fetch IP and location
       const ipResponse = await fetch('https://api.ipify.org?format=json');
       const { ip } = await ipResponse.json();
-
-      // Fetch geolocation data
       const locationResponse = await fetch(`${gasGeolocationURL}&ip=${ip}`);
       const { latitude, longitude } = await locationResponse.json();
 
       // Fetch weather data
       const weatherResponse = await fetch(`${gasWeatherURL}&latitude=${latitude}&longitude=${longitude}`);
       const weatherData = await weatherResponse.json();
-
-      console.log('Weather Data:', weatherData);
-
-      // Ensure weather data is valid
-      if (!weatherData || !weatherData.weather || weatherData.weather.length === 0) {
-          console.error("Weather data is not available.");
-          return;
-      }
-
-      // Extract weather code and map to animation class
       const weatherCode = weatherData.weather[0].id;
-      let animationClass = null;
 
+      // Hide all animations first
+      const weatherEffects = document.getElementById("weather-effects");
+      Array.from(weatherEffects.children).forEach(child => {
+          child.style.display = "none";
+      });
+
+      // Show the relevant animation based on weather code
       if (weatherCode >= 200 && weatherCode < 300) {
-          animationClass = "thunderstorm";
+          document.getElementById("thunderstorm").style.display = "block";
       } else if (weatherCode >= 300 && weatherCode < 600) {
-          animationClass = "rain";
+          document.getElementById("rain").style.display = "block";
       } else if (weatherCode >= 600 && weatherCode < 700) {
-          animationClass = "snow";
+          document.getElementById("snow").style.display = "block";
       } else if (weatherCode > 800 && weatherCode < 900) {
-          animationClass = "clouds";
-      }
-
-      if (animationClass) {
-          document.body.classList.add(animationClass);
-          console.log('Added animation class to body:', animationClass);
+          document.getElementById("cloudy").style.display = "block";
       }
   } catch (error) {
-      console.error('Error fetching location or weather data:', error);
+      console.error('Error fetching weather data:', error);
   }
 });
+
 
 //=====================================================================================//
 
