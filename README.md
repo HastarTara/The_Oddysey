@@ -1,4 +1,14 @@
 # The Oddysey
+
+overview: This is my first post-bootcamp personal project and ive designed it to be fully modular so i can expand it in any direction, toward anything i want to learn - I intend it to be cohesive, easy to use: basically an automated CDN that generates and posts a handful of types of articles on things that interest me: 
+- a wikipedia article>600wds about a random tree (scraped from the tree species list WP article).
+- a collection of randomised webcomics from the back-catalogues of my favourite webcomics.
+- a random location interactive google street view panorama with locations drawn from a HF dataset I found of streetview panorama locations.
+- an embedded 'tv screen' showing YT livestreams and buttons to switch between different categories of things that interest me like space, underwater, nature, traffic, etc.
+- other features include:
+ - an interactive splash screen, possibly with a drawn unlock symbol grid thing to make it feel mystical / exclusive.
+ - the home page should show a background weather animation (rain, clouds, sun) based on the user's rough IP geolocation.
+ - many more feature ideas. a weekly collaborative GIPHY canvas. etc etc.....
 ## to do:
 
 - AMBIENT TV
@@ -9,7 +19,7 @@
 
 - SPLASH  
   - add color theme toggle (so i can see for production without turning my dark flag off - also to get cool colorful inversions i.e. of splash page. Also swich the src of the logo (white to black, etc)
-  - work more on splash page - add lock mechanism? and change button so the the eye is centered again  
+  - work more on splash page - add lock mechanism? remove  button so the the eye is centered again  
 
 - TREES
   - add 'click image to read full article' above the image, and make the image the external link
