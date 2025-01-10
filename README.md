@@ -32,6 +32,7 @@ overview: This is my first post-bootcamp personal project and ive designed it to
   -  get emojis/accent chars working (will involving fiddling with the jekyll settings). Shrink the window slightly to allign with other jekyll page elements - soemthing to do with the encodings utf-8, etc in GAS and githb api calls.. any place where theres sending and en/decoding....
 
 - COMICS
+  - Add 'poorly drwn lines' comic to it
   - larger font / obvious link for TV trope
   - sort thumbnail switch light/dark theme dependant
   - better front matter/banner pic? waht file type? ive done png, why not svg? research what is standard
