@@ -47,14 +47,14 @@ categories: [${category}]
 tags: [streetview]
 image: ${imageUrl}
 description: "A brief overview of ${title}."
+show_featured_image_in_post: false
 ---
 
 <iframe
-    width="600"
-    height="300"
+    width="100%"
+    height="auto"
     src="https://www.google.com/maps/embed/v1/streetview?key=${apiKey}&location=${latitude},${longitude}"
-    frameborder="0"
-    style="border:0"
+    style="aspect-ratio: 16 / 9; border: 0;"
     allowfullscreen>
 </iframe>
 
