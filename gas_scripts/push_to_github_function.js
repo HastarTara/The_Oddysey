@@ -14,7 +14,7 @@ function pushToGithub(content, category, title) {
 
   const payload = {
     message,
-    content: Utilities.base64Encode(content)
+    content: Utilities.base64Encode(Utilities.newBlob(content).getBytes())
   };
 
   const options = {

@@ -58,7 +58,7 @@ description: "A brief overview of ${title}."
     allowfullscreen>
 </iframe>
 
-## [Read the full article here](${url})`;
+## [Read the full article here](${url}) 🐕`;
 
     // Push to GitHub if running standalone
     if (runStandalone) {
