@@ -29,7 +29,7 @@ overview: This is my first post-bootcamp personal project and ive designed it to
         (https://en.wikipedia.org/wiki/List_of_tree_genera) - same deal for 'common fish names', etc. wikipedia has irregular structures... https://en.wikipedia.org/wiki/Category:Chemical_elements eg
 
 - ROAD PANORAMAS
-  -  get emojis/accent chars working (will involving fiddling with the jekyll settings). Shrink the window slightly to allign with other jekyll page elements - soemthing to do with the encodings utf-8, etc in GAS and githb api calls.. any place where theres sending and en/decoding....
+  -  get the iframe to be bigger in the article (or even jump straight to full screen). check the iframe code in the gas script - its an attempt that doesnt work, needs redoing)
 
 - COMICS
   - Add 'poorly drwn lines' comic to it
