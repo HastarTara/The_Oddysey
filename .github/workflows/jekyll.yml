@@ -33,18 +33,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Ruby
-        run: |
-          git clone https://github.com/rbenv/ruby-build.git ~/.ruby-build
-          export PATH="$HOME/.ruby-build/bin:$PATH"
-          ruby-build 3.2.2 /opt/hostedtoolcache/Ruby/3.2.2/x64
-          touch /opt/hostedtoolcache/Ruby/3.2.2/x64.complete
+
       - name: Setup Ruby
-        uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          ruby-version: '3.2' # Specify the version you want
+          bundler-cache: true # Caches bundler and installed gems
+
           cache-version: 0 # Increment this number if you need to re-download cached gems
+      
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
