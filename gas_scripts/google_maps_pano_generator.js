@@ -40,25 +40,25 @@ function generateMarkdownPost(sheetId, category, apiKey, runStandalone) {
 
     // Create the Markdown article
     var markdownArticle = `---
-layout: post
-title: "${title}"
-author: yourname
-categories: [${category}]
-tags: [streetview]
-image: ${imageUrl}
-description: "A brief overview of ${title}."
----
-
-<iframe
-    width="600"
-    height="300"
-    src="https://www.google.com/maps/embed/v1/streetview?key=${apiKey}&location=${latitude},${longitude}"
-    frameborder="0"
-    style="border:0"
-    allowfullscreen>
-</iframe>
-
-## [Read the full article here](${url}) 🐕`;
+    layout: post
+    title: "${title}"
+    author: yourname
+    categories: [${category}]
+    tags: [streetview]
+    image: ${imageUrl}
+    description: "A brief overview of ${title}."
+    ---
+    
+    <div style="width: 100%; overflow: hidden;">
+        <iframe
+            src="https://www.google.com/maps/embed/v1/streetview?key=${apiKey}&location=${latitude},${longitude}"
+            style="width: 100%; aspect-ratio: 16/9; border: none;"
+            allowfullscreen>
+        </iframe>
+    </div>
+    
+    ## [Read the full article here](${url}) 🐕`;
+    
 
     // Push to GitHub if running standalone
     if (runStandalone) {
