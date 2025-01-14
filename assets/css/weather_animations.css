@@ -140,7 +140,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    filter: brightness(200%) drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+    filter: brightness(200%) drop-shadow(0 0 10px rgba(255, 255, 255, 01));
     top: 0;
     transition: all 2s;
   }

@@ -33,6 +33,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Ruby
+        run: |
+          git clone https://github.com/rbenv/ruby-build.git ~/.ruby-build
+          export PATH="$HOME/.ruby-build/bin:$PATH"
+          ruby-build 3.2.2 /opt/hostedtoolcache/Ruby/3.2.2/x64
+          touch /opt/hostedtoolcache/Ruby/3.2.2/x64.complete
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
         with:
