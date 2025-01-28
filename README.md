@@ -32,7 +32,7 @@ overview: This is my first post-bootcamp personal project and ive designed it to
   -  get the iframe to be bigger in the article (or even jump straight to full screen). check the iframe code in the gas script - its an attempt that doesnt work, needs redoing)
 
 - COMICS
-  - Add 'poorly drwn lines' comic to it
+  - Add 'poorly drwn lines' comic to it (and lunar baboon?)
   - larger font / obvious link for TV trope
   - sort thumbnail switch light/dark theme dependant
   - better front matter/banner pic? waht file type? ive done png, why not svg? research what is standard
